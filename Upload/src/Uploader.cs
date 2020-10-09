@@ -9,8 +9,8 @@ namespace Upload
 	class Uploader
 	{
 
-		private const string user = "ftp-user";
-		private const string password = "ftp-password";
+		private const string user = "Ftp-User";
+		private const string password = "Ftp-Password";
 
 		public void UploadSchuelerToFtp(string file)
 		{
