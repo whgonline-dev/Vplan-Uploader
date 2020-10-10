@@ -13,32 +13,15 @@ namespace Upload
 
 		private static string file_schueler = string.Empty;
 		private static string file_lehrer = string.Empty;
-
-		private Bitmap schueler_png = Properties.Resources.schueler_png; 
-		private Bitmap lehrer_png = Properties.Resources.lehrer_png;
-		private Bitmap pdf_png = Properties.Resources.pdf_png;
-		private Bitmap browse_png = Properties.Resources.browse;
-		private Bitmap clear = Properties.Resources.clear_png;
 		
 
 		public Form1()
 		{
 			InitializeComponent();
-			this.Text = "Uploader";
-			this.MaximizeBox = false;
-			FormBorderStyle = FormBorderStyle.FixedDialog;
-			schueler.BackgroundImage = schueler_png;
-			lehrer.BackgroundImage = lehrer_png;
-			clear_schueler.BackgroundImage = clear; 
-			clear_lehrer.BackgroundImage = clear;
-			Browse_Schueler.BackgroundImage = browse_png;
-			Browse_Lehrer.BackgroundImage = browse_png;
-			
 		}
 
 		private void schueler_DragEnter(object sender, DragEventArgs e)
 		{
-			
 			e.Effect = DragDropEffects.All;
 		}
 
@@ -47,7 +30,7 @@ namespace Upload
 			if (Path.GetExtension(((string[])e.Data.GetData(DataFormats.FileDrop))[0]) == ".pdf")
 			{
 				file_schueler = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
-				schueler.BackgroundImage = pdf_png;
+				schueler.BackgroundImage = Properties.Resources.pdf_png;
 				schueler_file_txtbox.Text = file_schueler.Split('\\').Last();
 			}
 			else
@@ -64,7 +47,7 @@ namespace Upload
 			if (Path.GetExtension(((string[])e.Data.GetData(DataFormats.FileDrop))[0]) == ".pdf")
 			{
 				file_lehrer = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
-				lehrer.BackgroundImage = pdf_png;
+				lehrer.BackgroundImage = Properties.Resources.pdf_png;
 				lehrer_file_txtbox.Text = file_lehrer.Split('\\').Last();
 
 			}
@@ -77,7 +60,7 @@ namespace Upload
 			if (file_schueler != string.Empty)
 			{
 				file_schueler = string.Empty;
-				schueler.BackgroundImage = schueler_png;
+				schueler.BackgroundImage = Properties.Resources.schueler_png;
 				schueler_file_txtbox.Text = string.Empty;
 			}
 		}
@@ -87,7 +70,7 @@ namespace Upload
 			if (file_lehrer != string.Empty)
 			{
 				file_lehrer = string.Empty;
-				lehrer.BackgroundImage = lehrer_png;
+				lehrer.BackgroundImage = Properties.Resources.lehrer_png;
 				lehrer_file_txtbox.Text = string.Empty;
 			}
 		}
@@ -97,7 +80,7 @@ namespace Upload
 			if (file_schueler != string.Empty)
 			{
 				ul.UploadSchuelerToFtp(file_schueler);
-				schueler.BackgroundImage = schueler_png;
+				schueler.BackgroundImage = Properties.Resources.schueler_png;
 				file_schueler = string.Empty;
 				schueler_file_txtbox.Text = string.Empty;
 				
@@ -111,7 +94,7 @@ namespace Upload
 			if (file_lehrer != string.Empty)
 			{
 				ul.UploadLehrerToFtp(file_lehrer);
-				lehrer.BackgroundImage = lehrer_png;
+				lehrer.BackgroundImage = Properties.Resources.lehrer_png;
 				file_lehrer = string.Empty;
 				lehrer_file_txtbox.Text = string.Empty;
 			}
@@ -129,7 +112,7 @@ namespace Upload
 			if (file_schueler != string.Empty)
 			{
 				schueler_file_txtbox.Text = file_schueler.Split('\\').Last();
-				schueler.BackgroundImage = pdf_png;
+				schueler.BackgroundImage = Properties.Resources.pdf_png;
 			}
 		}
 
@@ -143,7 +126,7 @@ namespace Upload
 			if (file_lehrer != string.Empty)
 			{
 				lehrer_file_txtbox.Text = file_lehrer.Split('\\').Last();
-				lehrer.BackgroundImage = pdf_png;
+				lehrer.BackgroundImage = Properties.Resources.pdf_png;
 			}
 		}
 	}

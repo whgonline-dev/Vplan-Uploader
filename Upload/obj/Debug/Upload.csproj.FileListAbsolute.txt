@@ -1,9 +1,0 @@
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\bin\Debug\Upload.exe.config
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\bin\Debug\Upload.exe
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\bin\Debug\Upload.pdb
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.csprojAssemblyReference.cache
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.Properties.Resources.resources
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.csproj.GenerateResource.cache
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.csproj.CoreCompileInputs.cache
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.exe
-C:\Users\Marek Freunscht\source\repos\Upload\Upload\obj\Debug\Upload.pdb
