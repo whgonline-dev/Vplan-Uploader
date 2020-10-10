@@ -28,6 +28,9 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.Text = "Uploader";
+			this.MaximizeBox = false;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.schueler = new System.Windows.Forms.Panel();
 			this.lehrer = new System.Windows.Forms.Panel();
 			this.clear_lehrer = new System.Windows.Forms.Button();
@@ -52,6 +55,7 @@
 			this.schueler.TabIndex = 0;
 			this.schueler.DragDrop += new System.Windows.Forms.DragEventHandler(this.schueler_DragDrop);
 			this.schueler.DragEnter += new System.Windows.Forms.DragEventHandler(this.schueler_DragEnter);
+			this.schueler.BackgroundImage = Properties.Resources.schueler_png;
 			// 
 			// lehrer
 			// 
@@ -64,6 +68,7 @@
 			this.lehrer.TabIndex = 1;
 			this.lehrer.DragDrop += new System.Windows.Forms.DragEventHandler(this.lehrer_DragDrop);
 			this.lehrer.DragEnter += new System.Windows.Forms.DragEventHandler(this.lehrer_DragEnter);
+			this.lehrer.BackgroundImage = Properties.Resources.lehrer_png;
 			// 
 			// clear_lehrer
 			// 
@@ -77,6 +82,7 @@
 			this.clear_lehrer.TabIndex = 3;
 			this.clear_lehrer.UseVisualStyleBackColor = false;
 			this.clear_lehrer.Click += new System.EventHandler(this.clear_lehrer_Click);
+			this.clear_lehrer.BackgroundImage = Properties.Resources.clear_png;
 			// 
 			// clear_schueler
 			// 
@@ -89,6 +95,7 @@
 			this.clear_schueler.TabIndex = 4;
 			this.clear_schueler.UseVisualStyleBackColor = false;
 			this.clear_schueler.Click += new System.EventHandler(this.clear_schueler_Click);
+			this.clear_schueler.BackgroundImage = Properties.Resources.clear_png;
 			// 
 			// upload_schueler_btn
 			// 
@@ -141,6 +148,7 @@
 			this.Browse_Schueler.TabIndex = 9;
 			this.Browse_Schueler.UseVisualStyleBackColor = true;
 			this.Browse_Schueler.Click += new System.EventHandler(this.Browse_Schueler_Click);
+			this.Browse_Schueler.BackgroundImage = Properties.Resources.browse;
 			// 
 			// Browse_Lehrer
 			// 
@@ -151,6 +159,7 @@
 			this.Browse_Lehrer.TabIndex = 10;
 			this.Browse_Lehrer.UseVisualStyleBackColor = true;
 			this.Browse_Lehrer.Click += new System.EventHandler(this.Browse_Lehrer_Click);
+			this.Browse_Lehrer.BackgroundImage = Properties.Resources.browse;
 			// 
 			// openFileDialog1
 			// 
