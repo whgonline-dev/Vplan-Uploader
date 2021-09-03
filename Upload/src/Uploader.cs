@@ -43,7 +43,7 @@ namespace Upload
 				FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 				//MessageBox.Show($"Delete status: {response.StatusDescription}");
 				response.Close();
-
+				
 			}
 			catch (Exception)
 			{
@@ -89,23 +89,25 @@ namespace Upload
 		private void RenameFile(Uri uri, Uri newName)
 		{
 
-			FtpWebRequest ftp_request;
+			FtpWebRequest ftpRequest;
 			WebClient request;
 			Stream requestStream;
 			byte[] buffer;
 
-			ftp_request = (FtpWebRequest)WebRequest.Create(newName);
-			ftp_request.Credentials = new NetworkCredential(user, password);
-			ftp_request.Method = WebRequestMethods.Ftp.UploadFile;
+			ftpRequest = (FtpWebRequest)WebRequest.Create(newName);
+			ftpRequest.Credentials = new NetworkCredential(user, password);
+			ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
 
-			request = new WebClient();
-			request.Credentials = new NetworkCredential(user, password);
+            request = new WebClient
+            {
+                Credentials = new NetworkCredential(user, password)
+            };
 
-			try
+            try
 			{
 				//Daten der Datei in den Buffer herunterladen
 				buffer = request.DownloadData(uri);
-				requestStream = ftp_request.GetRequestStream();
+				requestStream = ftpRequest.GetRequestStream();
 				//Neue Datei hochladen mit aktualisiertem Namen
 				requestStream.Write(buffer, 0, buffer.Length);
 				requestStream.Flush();
@@ -128,7 +130,7 @@ namespace Upload
 				using (HttpResponseMessage response = await client.GetAsync("http://vplan.whgonline.de/pdf2png.php"))
 				{
 					if (response.IsSuccessStatusCode == false)
-						MessageBox.Show("Fehler beim Hochladen der Dateien, 2");
+						MessageBox.Show("Fehler beim Hochladen der Dateien");
 				}
 			}
 		}

@@ -8,11 +8,10 @@ namespace Upload
 {
 	public partial class Form1 : Form
 	{
+		private readonly Uploader ul = new Uploader();
 
-		private Uploader ul = new Uploader();
-
-		private static string file_schueler = string.Empty;
-		private static string file_lehrer = string.Empty;
+		private static string studentFile = string.Empty;
+		private static string teacherFile = string.Empty;
 		
 
 		public Form1()
@@ -29,9 +28,9 @@ namespace Upload
 		{
 			if (Path.GetExtension(((string[])e.Data.GetData(DataFormats.FileDrop))[0]) == ".pdf")
 			{
-				file_schueler = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
-				schueler.BackgroundImage = Properties.Resources.pdf_png;
-				schueler_file_txtbox.Text = file_schueler.Split('\\').Last();
+				studentFile = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
+				schueler.BackgroundImage = Properties.Resources.Pdf;
+				schueler_file_txtbox.Text = studentFile.Split('\\').Last();
 			}
 			else
 				MessageBox.Show("Falsche Datei, es muss eine PDF hochgeladen werden");
@@ -46,9 +45,9 @@ namespace Upload
 		{
 			if (Path.GetExtension(((string[])e.Data.GetData(DataFormats.FileDrop))[0]) == ".pdf")
 			{
-				file_lehrer = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
-				lehrer.BackgroundImage = Properties.Resources.pdf_png;
-				lehrer_file_txtbox.Text = file_lehrer.Split('\\').Last();
+				teacherFile = ((string[])e.Data.GetData(DataFormats.FileDrop))[0];
+				lehrer.BackgroundImage = Properties.Resources.Pdf;
+				lehrer_file_txtbox.Text = teacherFile.Split('\\').Last();
 
 			}
 			else
@@ -57,31 +56,31 @@ namespace Upload
 
 		private void clear_schueler_Click(object sender, EventArgs e)
 		{
-			if (file_schueler != string.Empty)
+			if (studentFile != string.Empty)
 			{
-				file_schueler = string.Empty;
-				schueler.BackgroundImage = Properties.Resources.schueler_png;
+				studentFile = string.Empty;
+				schueler.BackgroundImage = Properties.Resources.Schüler;
 				schueler_file_txtbox.Text = string.Empty;
 			}
 		}
 
 		private void clear_lehrer_Click(object sender, EventArgs e)
 		{
-			if (file_lehrer != string.Empty)
+			if (teacherFile != string.Empty)
 			{
-				file_lehrer = string.Empty;
-				lehrer.BackgroundImage = Properties.Resources.lehrer_png;
+				teacherFile = string.Empty;
+				lehrer.BackgroundImage = Properties.Resources.Lehrer;
 				lehrer_file_txtbox.Text = string.Empty;
 			}
 		}
 
 		private void upload_schueler_btn_Click(object sender, EventArgs e)
 		{
-			if (file_schueler != string.Empty)
+			if (studentFile != string.Empty)
 			{
-				ul.UploadSchuelerToFtp(file_schueler);
-				schueler.BackgroundImage = Properties.Resources.schueler_png;
-				file_schueler = string.Empty;
+				ul.UploadSchuelerToFtp(studentFile);
+				schueler.BackgroundImage = Properties.Resources.Schüler;
+				studentFile = string.Empty;
 				schueler_file_txtbox.Text = string.Empty;
 				
 			}
@@ -91,11 +90,11 @@ namespace Upload
 
 		private void upload_lehrer_btn_Click(object sender, EventArgs e)
 		{
-			if (file_lehrer != string.Empty)
+			if (teacherFile != string.Empty)
 			{
-				ul.UploadLehrerToFtp(file_lehrer);
-				lehrer.BackgroundImage = Properties.Resources.lehrer_png;
-				file_lehrer = string.Empty;
+				ul.UploadLehrerToFtp(teacherFile);
+				lehrer.BackgroundImage = Properties.Resources.Lehrer;
+				teacherFile = string.Empty;
 				lehrer_file_txtbox.Text = string.Empty;
 			}
 			else
@@ -108,11 +107,11 @@ namespace Upload
 			openFileDialog1.Filter = "pdf files (*.pdf)|*.pdf";
 			openFileDialog1.FileName = string.Empty;
 			openFileDialog1.ShowDialog();
-			file_schueler = openFileDialog1.FileName;
-			if (file_schueler != string.Empty)
+			studentFile = openFileDialog1.FileName;
+			if (studentFile != string.Empty)
 			{
-				schueler_file_txtbox.Text = file_schueler.Split('\\').Last();
-				schueler.BackgroundImage = Properties.Resources.pdf_png;
+				schueler_file_txtbox.Text = studentFile.Split('\\').Last();
+				schueler.BackgroundImage = Properties.Resources.Pdf;
 			}
 		}
 
@@ -122,11 +121,11 @@ namespace Upload
 			openFileDialog1.Filter = "pdf files (*.pdf)|*.pdf";
 			openFileDialog1.FileName = string.Empty;
 			openFileDialog1.ShowDialog();
-			file_lehrer = openFileDialog1.FileName;
-			if (file_lehrer != string.Empty)
+			teacherFile = openFileDialog1.FileName;
+			if (teacherFile != string.Empty)
 			{
-				lehrer_file_txtbox.Text = file_lehrer.Split('\\').Last();
-				lehrer.BackgroundImage = Properties.Resources.pdf_png;
+				lehrer_file_txtbox.Text = teacherFile.Split('\\').Last();
+				lehrer.BackgroundImage = Properties.Resources.Pdf;
 			}
 		}
 	}

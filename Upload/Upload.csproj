@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon %283%29.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,6 +68,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="src\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,25 +85,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\browse.png" />
+    <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\clear_png.png" />
+    <None Include="Resources\Explorer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lehrer_png.png" />
+    <None Include="Resources\Remove.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pdf_png.png" />
+    <None Include="Resources\Schüler.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\schueler_png.png" />
+    <None Include="Resources\Lehrer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon %283%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icon %283%29.ico" />
+    <None Include="Resources\Pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
