@@ -14,18 +14,17 @@ namespace Upload
 
 		public void UploadSchuelerToFtp(string file)
 		{
-
 			DeleteFile(uri: new Uri("ftp://whgonline.de/vplan_a.pdf"));
 			RenameFile(uri: new Uri("ftp://whgonline.de/vplan.pdf"), newName: new Uri("ftp://whgonline.de/vplan_a.pdf"));
 			UploadFile(uri: new Uri("ftp://whgonline.de/vplan.pdf"), file: file);
-			GetRequest();
+			Get("https://whgonline.de/vplan/pdf2png.php");
 		}
 
 		public void UploadLehrerToFtp(string file)
 		{
 			DeleteFile(uri: new Uri("ftp://whgonline.de/vplanL.pdf"));
 			UploadFile(uri: new Uri("ftp://whgonline.de/vplanL.pdf"), file: file);
-			GetRequest();
+			Get("https://whgonline.de/vplan/pdf2png.php");
 		}
 
 		private void DeleteFile(Uri uri)
@@ -123,11 +122,11 @@ namespace Upload
 			DeleteFile(uri);
 		}
 
-		private async void GetRequest()
+		private async void Get(string url)
 		{
 			using (HttpClient client = new HttpClient())
 			{
-				using (HttpResponseMessage response = await client.GetAsync("http://vplan.whgonline.de/pdf2png.php"))
+				using (HttpResponseMessage response = await client.GetAsync(url))
 				{
 					if (response.IsSuccessStatusCode == false)
 						MessageBox.Show("Fehler beim Hochladen der Dateien");
