@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Upload
 {
-	public partial class Form1 : Form
+	public partial class UploadForm : Form
 	{
 		private readonly Uploader ul = new Uploader();
 
@@ -14,7 +14,7 @@ namespace Upload
 		private static string teacherFile = string.Empty;
 		
 
-		public Form1()
+		public UploadForm()
 		{
 			InitializeComponent();
 		}

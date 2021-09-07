@@ -1,6 +1,6 @@
 ﻿namespace Upload
 {
-	partial class Form1
+	partial class UploadForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UploadForm));
             this.upload_schueler_btn = new System.Windows.Forms.Button();
             this.schueler_file_txtbox = new System.Windows.Forms.TextBox();
             this.lehrer_file_txtbox = new System.Windows.Forms.TextBox();
@@ -183,7 +183,7 @@
             this.schueler.DragDrop += new System.Windows.Forms.DragEventHandler(this.schueler_DragDrop);
             this.schueler.DragEnter += new System.Windows.Forms.DragEventHandler(this.schueler_DragEnter);
             // 
-            // Form1
+            // UploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,7 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "UploadForm";
             this.Text = "Uploader";
             this.ResumeLayout(false);
             this.PerformLayout();
