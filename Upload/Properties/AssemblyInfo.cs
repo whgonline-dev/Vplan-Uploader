@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Upload")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Vplan Uploader")]
+[assembly: AssemblyDescription("Läd den Vertretungsplan auf die Website hoch")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
+[assembly: AssemblyCompany("Marek Freunscht")]
 [assembly: AssemblyProduct("Upload")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2020")]
+[assembly: AssemblyCopyright("Copyright © Marek Freunscht 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
