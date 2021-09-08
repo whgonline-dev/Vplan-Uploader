@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
+using System;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace Upload
 {
     public partial class AboutForm : Form
     {
-        public AboutForm()
+        public AboutForm(Point parentPosition, Size parentSize)
         {
             InitializeComponent();
+            Debug.WriteLine(parentPosition.X);
         }
     }
 }

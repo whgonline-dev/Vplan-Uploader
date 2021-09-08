@@ -128,5 +128,10 @@ namespace Upload
 				lehrer.BackgroundImage = Properties.Resources.Pdf;
 			}
 		}
-	}
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			new AboutForm(this.DesktopLocation, this.Size).Show();
+        }
+    }
 }
