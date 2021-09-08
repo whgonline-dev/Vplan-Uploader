@@ -40,6 +40,9 @@
             this.clear_lehrer = new System.Windows.Forms.Button();
             this.lehrer = new System.Windows.Forms.Panel();
             this.schueler = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upload_schueler_btn
@@ -183,6 +186,25 @@
             this.schueler.DragDrop += new System.Windows.Forms.DragEventHandler(this.schueler_DragDrop);
             this.schueler.DragEnter += new System.Windows.Forms.DragEventHandler(this.schueler_DragEnter);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.menuStrip1.ForeColor = System.Drawing.Color.White;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.helpToolStripMenuItem.Text = "About";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
             // UploadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,11 +221,15 @@
             this.Controls.Add(this.clear_lehrer);
             this.Controls.Add(this.lehrer);
             this.Controls.Add(this.schueler);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "UploadForm";
-            this.Text = "Uploader";
+            this.Text = "Vplan Uploader";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +248,8 @@
 		private System.Windows.Forms.Button Browse_Schueler;
 		private System.Windows.Forms.Button Browse_Lehrer;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-	}
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+    }
 }
 
