@@ -8,10 +8,19 @@ namespace Upload
 {
     public partial class AboutForm : Form
     {
-        public AboutForm(Point parentPosition, Size parentSize)
+        private Point parentPos;
+        private Size parentSize;
+
+        public AboutForm(Point parentPos, Size parentSize)
         {
             InitializeComponent();
-            Debug.WriteLine(parentPosition.X);
+            this.parentPos = parentPos;
+            this.parentSize = parentSize;
+        }
+
+        private void AboutForm_Shown(object sender, EventArgs e)
+        {
+            this.SetDesktopLocation(parentPos.X + (parentSize.Width / 2) - (this.Width / 2), parentPos.Y + (parentSize.Height / 2) - (this.Height / 2));
         }
     }
 }

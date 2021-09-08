@@ -227,7 +227,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "UploadForm";
-            this.Text = "Uploader";
+            this.Text = "Vplan Uploader";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
