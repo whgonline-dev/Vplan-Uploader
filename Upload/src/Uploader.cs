@@ -3,14 +3,26 @@ using System.Net;
 using System.Net.Http;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Upload
 {
 	class Uploader
 	{
+		private string user;
+		private string password;
 
-		private const string user = "Ftp-User";
-		private const string password = "Ftp-Password";
+		public Uploader()
+		{
+			ReadCredentials();
+		}
+
+		private void ReadCredentials()
+		{
+			var contents = File.ReadAllLines("Credentials");
+			user = contents[0];
+			password = contents[1];
+		}
 
 		public void UploadSchuelerToFtp(string file)
 		{
@@ -38,6 +50,7 @@ namespace Upload
 				FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
 				request.Credentials = new NetworkCredential(user, password);
 				request.Method = WebRequestMethods.Ftp.DeleteFile;
+				request.Proxy = null;
 
 				FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 				//MessageBox.Show($"Delete status: {response.StatusDescription}");
@@ -61,6 +74,7 @@ namespace Upload
 				FtpWebRequest request = (FtpWebRequest)WebRequest.Create(uri);
 				request.Credentials = new NetworkCredential(user, password);
 				request.Method = WebRequestMethods.Ftp.UploadFile;
+				request.Proxy = null;
 
 				using (FileStream fs = File.OpenRead(file))
 				{
@@ -96,6 +110,7 @@ namespace Upload
 			ftpRequest = (FtpWebRequest)WebRequest.Create(newName);
 			ftpRequest.Credentials = new NetworkCredential(user, password);
 			ftpRequest.Method = WebRequestMethods.Ftp.UploadFile;
+			ftpRequest.Proxy = null;
 
             request = new WebClient
             {
