@@ -13,12 +13,8 @@ namespace Upload
 
 		public Uploader()
 		{
-			ReadCredentials();
-		}
-
-		private void ReadCredentials()
-		{
-			var contents = File.ReadAllLines("Credentials");
+			var credentialsPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/.UploaderUtil/credentials";
+			var contents = File.ReadAllLines(credentialsPath);
 			user = contents[0];
 			password = contents[1];
 		}
