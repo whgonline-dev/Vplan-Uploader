@@ -13,10 +13,18 @@ namespace Upload
 
 		public Uploader()
 		{
-			var credentialsPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/.UploaderUtil/credentials";
-			var contents = File.ReadAllLines(credentialsPath);
-			user = contents[0];
-			password = contents[1];
+			try
+			{
+				var credentialsPath = $"{Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}/.UploaderUtil/credentials";
+				var contents = File.ReadAllLines(credentialsPath);
+				user = contents[0];
+				password = contents[1];
+			}
+			catch(Exception e)
+			{
+				MessageBox.Show(e.Message);
+				Environment.Exit(1);
+			}
 		}
 
 		public void UploadSchuelerToFtp(string file)
@@ -46,7 +54,7 @@ namespace Upload
 				request.Credentials = new NetworkCredential(user, password);
 				request.Method = WebRequestMethods.Ftp.DeleteFile;
 				request.Proxy = null;
-
+				
 				FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 				//MessageBox.Show($"Delete status: {response.StatusDescription}");
 				response.Close();
